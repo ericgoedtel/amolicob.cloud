@@ -18,7 +18,7 @@ resource "cloudflare_record" "dmarc_record" {
   zone_id = var.cloudflare_zone_id
   name    = "_dmarc"
   type    = "TXT"
-  content = "\"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s;\""
+  content = "\"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; rua=mailto:111acc016fdc416e9b340c9d22106a8a@dmarc-reports.cloudflare.net;\""
   ttl     = 3600
 }
 
@@ -27,13 +27,4 @@ module "amolicob_cloud" {
 
   name        = "amolicob.cloud"
   description = "Infrastructure and code related to my other public domain"
-}
-
-data "github_repository" "amolicob_cloud" {
-  full_name = "ericgoedtel/amolicob.cloud"
-}
-
-import {
-  to = module.amolicob_cloud.github_repository.this
-  id = data.github_repository.amolicob_cloud.name
 }
