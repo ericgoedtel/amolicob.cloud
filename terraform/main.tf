@@ -21,3 +21,19 @@ resource "cloudflare_record" "dmarc_record" {
   content = "\"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s;\""
   ttl     = 3600
 }
+
+module "amolicob_cloud" {
+  source = "./modules/github_repo"
+
+  name        = "amolicob.cloud"
+  description = "Infrastructure and code related to my other public domain"
+}
+
+data "github_repository" "amolicob_cloud" {
+  full_name = "ericgoedtel/amolicob.cloud"
+}
+
+import {
+  to = module.amolicob_cloud.github_repository.this
+  id = data.github_repository.amolicob_cloud.name
+}
