@@ -28,3 +28,17 @@ module "amolicob_cloud" {
   name        = "amolicob.cloud"
   description = "Infrastructure and code related to my other public domain"
 }
+
+module "applications" {
+  source = "./modules/github_repo"
+
+  name        = "applications"
+  description = "ArgoCD applications for my labs"
+}
+
+module "playbooks" {
+  source = "./modules/github_repo"
+
+  name        = "playbooks"
+  description = "Infrastructure playbooks for homelab equipment"
+}
