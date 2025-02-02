@@ -21,6 +21,7 @@ resource "github_repository_ruleset" "basic_branch_protection" {
   }
 
   rules {
+    deletion = var.block_deletion
     pull_request {
       dismiss_stale_reviews_on_push   = var.dismiss_stale_reviews
       require_code_owner_review       = var.require_code_owner_review

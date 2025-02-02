@@ -28,6 +28,7 @@ No modules.
 | <a name="input_allow_merge_commit"></a> [allow\_merge\_commit](#input\_allow\_merge\_commit) | Whether to allow merge commits. | `bool` | `false` | no |
 | <a name="input_allow_rebase_merge"></a> [allow\_rebase\_merge](#input\_allow\_rebase\_merge) | Whether to allow rebase merges. | `bool` | `false` | no |
 | <a name="input_allow_squash_merge"></a> [allow\_squash\_merge](#input\_allow\_squash\_merge) | Whether to allow squash merges. | `bool` | `true` | no |
+| <a name="input_block_deletion"></a> [block\_deletion](#input\_block\_deletion) | Whether protected branches should be deletable | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the repository | `string` | n/a | yes |
 | <a name="input_dismiss_stale_reviews"></a> [dismiss\_stale\_reviews](#input\_dismiss\_stale\_reviews) | Whether to dismiss stale reviews when new commits are pushed. | `bool` | `true` | no |
 | <a name="input_exclude_repos"></a> [exclude\_repos](#input\_exclude\_repos) | List of branches to include in the ruleset. | `list(string)` | `[]` | no |
