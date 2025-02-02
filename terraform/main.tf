@@ -35,7 +35,7 @@ module "applications" {
   name        = "applications"
   description = "ArgoCD applications for my labs"
 
-  include_repos = ["~DEFAULT_BRANCH", "develop"]
+  include_repos = ["main", "develop"]
 }
 
 module "playbooks" {
@@ -44,3 +44,22 @@ module "playbooks" {
   name        = "playbooks"
   description = "Infrastructure playbooks for homelab equipment"
 }
+
+import {
+  for_each = toset(["main", "develop"])
+  to       = module.applications.github_branch.this[each.key]
+  id       = "applications:${each.key}"
+}
+
+import {
+  for_each = toset(["main"])
+  to       = module.playbooks.github_branch.this[each.key]
+  id       = "playbooks:${each.key}"
+}
+
+import {
+  for_each = toset(["main"])
+  to       = module.amolicob_cloud.github_branch.this[each.key]
+  id       = "amolicob.cloud:${each.key}"
+}
+

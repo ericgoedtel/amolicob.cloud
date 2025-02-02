@@ -29,11 +29,11 @@ variable "allow_rebase_merge" {
 variable "include_repos" {
   description = "List of branches to include in the ruleset."
   type        = list(string)
-  default     = ["~DEFAULT_BRANCH"]
+  default     = ["main"]
 }
 
 variable "exclude_repos" {
-  description = "List of branches to include in the ruleset."
+  description = "List of branches to exclude in the ruleset."
   type        = list(string)
   default     = []
 }

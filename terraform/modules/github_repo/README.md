@@ -18,6 +18,8 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [github_branch.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
+| [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_ruleset.basic_branch_protection](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_ruleset) | resource |
 
@@ -31,8 +33,8 @@ No modules.
 | <a name="input_block_deletion"></a> [block\_deletion](#input\_block\_deletion) | Whether protected branches should be deletable | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the repository | `string` | n/a | yes |
 | <a name="input_dismiss_stale_reviews"></a> [dismiss\_stale\_reviews](#input\_dismiss\_stale\_reviews) | Whether to dismiss stale reviews when new commits are pushed. | `bool` | `true` | no |
-| <a name="input_exclude_repos"></a> [exclude\_repos](#input\_exclude\_repos) | List of branches to include in the ruleset. | `list(string)` | `[]` | no |
-| <a name="input_include_repos"></a> [include\_repos](#input\_include\_repos) | List of branches to include in the ruleset. | `list(string)` | <pre>[<br/>  "~DEFAULT_BRANCH"<br/>]</pre> | no |
+| <a name="input_exclude_repos"></a> [exclude\_repos](#input\_exclude\_repos) | List of branches to exclude in the ruleset. | `list(string)` | `[]` | no |
+| <a name="input_include_repos"></a> [include\_repos](#input\_include\_repos) | List of branches to include in the ruleset. | `list(string)` | <pre>[<br/>  "main"<br/>]</pre> | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the repository | `string` | n/a | yes |
 | <a name="input_require_code_owner_review"></a> [require\_code\_owner\_review](#input\_require\_code\_owner\_review) | Whether to require code owner reviews. | `bool` | `true` | no |
 | <a name="input_required_approving_review_count"></a> [required\_approving\_review\_count](#input\_required\_approving\_review\_count) | Number of required approving reviews. | `number` | `0` | no |

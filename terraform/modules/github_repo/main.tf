@@ -7,6 +7,17 @@ resource "github_repository" "this" {
   allow_rebase_merge = var.allow_rebase_merge
 }
 
+resource "github_branch" "this" {
+  for_each   = local.branches
+  repository = github_repository.this.name
+  branch     = each.key
+}
+
+resource "github_branch_default" "this" {
+  repository = github_repository.this.name
+  branch     = "main"
+}
+
 resource "github_repository_ruleset" "basic_branch_protection" {
   repository  = github_repository.this.name
   name        = "basic-branch-protection"
