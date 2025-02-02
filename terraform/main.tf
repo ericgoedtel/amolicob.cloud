@@ -34,6 +34,8 @@ module "applications" {
 
   name        = "applications"
   description = "ArgoCD applications for my labs"
+
+  include_repos = ["~DEFAULT_BRANCH", "develop"]
 }
 
 module "playbooks" {
