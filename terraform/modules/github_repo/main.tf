@@ -26,8 +26,8 @@ resource "github_repository_ruleset" "basic_branch_protection" {
 
   conditions {
     ref_name {
-      include = var.include_repos
-      exclude = var.exclude_repos
+      include = [for item in var.include_repos : "refs/heads/${item}"]
+      exclude = [for item in var.exclude_repos : "refs/heads/${item}"]
     }
   }
 
