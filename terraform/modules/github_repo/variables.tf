@@ -26,13 +26,25 @@ variable "allow_rebase_merge" {
   default     = false
 }
 
-variable "include_repos" {
-  description = "List of branches to include in the ruleset."
+variable "default_branch" {
+  description = "The name of the default branch"
+  type        = string
+  default     = "main"
+}
+
+variable "create_branches" {
+  description = "List of additional branches to create in the repo."
+  type        = list(string)
+  default     = []
+}
+
+variable "include_branches" {
+  description = "List of branches to include in all rulesets."
   type        = list(string)
   default     = ["main"]
 }
 
-variable "exclude_repos" {
+variable "exclude_branches" {
   description = "List of branches to exclude in the ruleset."
   type        = list(string)
   default     = []
