@@ -8,14 +8,14 @@ resource "github_repository" "this" {
 }
 
 resource "github_branch" "this" {
-  for_each   = local.branches
+  for_each   = toset(concat([var.default_branch], var.create_branches))
   repository = github_repository.this.name
   branch     = each.key
 }
 
 resource "github_branch_default" "this" {
   repository = github_repository.this.name
-  branch     = "main"
+  branch     = var.default_branch
 }
 
 resource "github_repository_ruleset" "basic_branch_protection" {
@@ -26,8 +26,8 @@ resource "github_repository_ruleset" "basic_branch_protection" {
 
   conditions {
     ref_name {
-      include = [for item in var.include_repos : "refs/heads/${item}"]
-      exclude = [for item in var.exclude_repos : "refs/heads/${item}"]
+      include = [for item in var.include_branches : "refs/heads/${item}"]
+      exclude = [for item in var.exclude_branches : "refs/heads/${item}"]
     }
   }
 
