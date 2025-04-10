@@ -40,3 +40,29 @@ resource "github_repository_ruleset" "basic_branch_protection" {
     }
   }
 }
+
+resource "github_repository_ruleset" "required_status_checks" {
+  count       = length(var.required_status_checks) > 0 ? 1 : 0
+  repository  = github_repository.this.name
+  name        = "required-status-checks"
+  target      = "branch"
+  enforcement = "active"
+
+  conditions {
+    ref_name {
+      include = [for item in var.include_branches : "refs/heads/${item}"]
+      exclude = [for item in var.exclude_branches : "refs/heads/${item}"]
+    }
+  }
+
+  rules {
+    required_status_checks {
+      dynamic "required_check" {
+        for_each = var.required_status_checks
+        content {
+          context = required_check.value
+        }
+      }
+    }
+  }
+}

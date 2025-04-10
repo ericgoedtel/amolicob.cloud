@@ -22,6 +22,7 @@ No modules.
 | [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_ruleset.basic_branch_protection](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_ruleset) | resource |
+| [github_repository_ruleset.required_status_checks](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_ruleset) | resource |
 
 ## Inputs
 
@@ -40,6 +41,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name of the repository | `string` | n/a | yes |
 | <a name="input_require_code_owner_review"></a> [require\_code\_owner\_review](#input\_require\_code\_owner\_review) | Whether to require code owner reviews. | `bool` | `true` | no |
 | <a name="input_required_approving_review_count"></a> [required\_approving\_review\_count](#input\_required\_approving\_review\_count) | Number of required approving reviews. | `number` | `0` | no |
+| <a name="input_required_status_checks"></a> [required\_status\_checks](#input\_required\_status\_checks) | n/a | `list(string)` | `[]` | no |
 
 ## Outputs
 

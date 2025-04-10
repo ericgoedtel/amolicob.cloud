@@ -68,6 +68,12 @@ variable "required_approving_review_count" {
   default     = 0
 }
 
+variable "required_status_checks" {
+  type    = list(string)
+  default = []
+}
+
+
 variable "block_deletion" {
   description = "Whether protected branches should be deletable"
   type        = bool

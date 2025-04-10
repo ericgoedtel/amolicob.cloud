@@ -25,8 +25,9 @@ resource "cloudflare_record" "dmarc_record" {
 module "amolicob_cloud" {
   source = "./modules/github_repo"
 
-  name        = "amolicob.cloud"
-  description = "Infrastructure and code related to my other public domain"
+  name                   = "amolicob.cloud"
+  description            = "Infrastructure and code related to my other public domain"
+  required_status_checks = ["Terraform Cloud/ericgoedtel/amolicob_cloud"]
 }
 
 module "applications" {
