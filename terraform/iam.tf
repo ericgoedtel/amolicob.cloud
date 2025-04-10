@@ -2,8 +2,13 @@ data "aws_caller_identity" "current" {}
 
 data "aws_iam_policy_document" "takeout_assumerole" {
   statement {
-    actions   = ["sts:AssumeRole"]
-    resources = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+    actions = ["sts:AssumeRole"]
+    principals {
+      type = "AWS"
+      identifiers = [
+        "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+      ]
+    }
   }
 }
 
