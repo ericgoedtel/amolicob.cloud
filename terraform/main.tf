@@ -44,5 +44,5 @@ module "playbooks" {
 
   name                   = "playbooks"
   description            = "Infrastructure playbooks for homelab equipment"
-  required_status_checks = ["ansible-lint / Ansible Lint"]
+  required_status_checks = ["Ansible Lint"]
 }
