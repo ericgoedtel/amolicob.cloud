@@ -42,6 +42,7 @@ module "applications" {
 module "playbooks" {
   source = "./modules/github_repo"
 
-  name        = "playbooks"
-  description = "Infrastructure playbooks for homelab equipment"
+  name                   = "playbooks"
+  description            = "Infrastructure playbooks for homelab equipment"
+  required_status_checks = ["ansible-lint / Ansible Lint"]
 }
