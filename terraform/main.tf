@@ -46,3 +46,11 @@ module "playbooks" {
   description            = "Infrastructure playbooks for homelab equipment"
   required_status_checks = ["Ansible Lint"]
 }
+
+module "mealwhisperer" {
+  source = "./modules/github_repo"
+
+  name                   = "mealwhisperer"
+  description            = "(Mostly) Self-hosted calorie tracker"
+  required_status_checks = []
+}
