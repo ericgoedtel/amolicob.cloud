@@ -53,6 +53,5 @@ module "mealwhisperer" {
   name                   = "mealwhisperer"
   description            = "(Mostly) Self-hosted calorie tracker"
   archived               = true
-  visibility             = "private"
   required_status_checks = []
 }
