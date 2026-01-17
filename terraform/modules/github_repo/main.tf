@@ -1,6 +1,8 @@
 resource "github_repository" "this" {
   name        = var.name
   description = var.description
+  archived    = var.archived
+  visibility  = var.visibility
 
   allow_merge_commit = var.allow_merge_commit
   allow_squash_merge = var.allow_squash_merge
