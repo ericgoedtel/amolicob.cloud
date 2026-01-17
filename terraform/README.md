@@ -17,6 +17,7 @@
 |------|--------|---------|
 | <a name="module_amolicob_cloud"></a> [amolicob\_cloud](#module\_amolicob\_cloud) | ./modules/github_repo | n/a |
 | <a name="module_applications"></a> [applications](#module\_applications) | ./modules/github_repo | n/a |
+| <a name="module_mealwhisperer"></a> [mealwhisperer](#module\_mealwhisperer) | ./modules/github_repo | n/a |
 | <a name="module_playbooks"></a> [playbooks](#module\_playbooks) | ./modules/github_repo | n/a |
 
 ## Resources

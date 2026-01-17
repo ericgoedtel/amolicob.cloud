@@ -79,3 +79,15 @@ variable "block_deletion" {
   type        = bool
   default     = true
 }
+
+variable "archived" {
+  description = "Whether the repository is archived"
+  type        = bool
+  default     = false
+}
+
+variable "visibility" {
+  description = "The visibility of the repository: public, private, or internal"
+  type        = string
+  default     = "public"
+}
