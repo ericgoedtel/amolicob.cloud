@@ -8,7 +8,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.28.0 |
 | <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.51.0 |
 
 ## Modules
